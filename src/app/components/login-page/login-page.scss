@@ -1,0 +1,44 @@
+:host{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+   
+}
+form{
+    display: flex;
+    flex-direction:column ;
+    padding: 1em;
+    width: 30%;
+    border-radius: 0.5em;
+    border: 1px solid gray;
+    background-color: rgb(203, 202, 202);
+    gap: 0.4em;
+    box-shadow:  5px 5px 30px rgb(45, 45, 45);
+    input{
+        padding: 0.4em;
+        border-radius: 0.5em;
+        margin: 0.3em;
+    }
+    button{
+      color: azure;
+      background-color: darkblue;
+      outline: none;
+      border: none;
+      border-radius: 0.2em;
+      cursor:pointer;
+       padding: 0.5em;
+    }
+    button[disabled]{
+        background-color: gray;
+        padding: 0.5em;
+    }
+}
+.hint{
+    color: red;
+}
+.eror{
+    background-color: darkred;
+    padding: 0.3em;
+    color: white;
+}

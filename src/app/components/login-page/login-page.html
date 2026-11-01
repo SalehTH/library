@@ -1,0 +1,25 @@
+<form [formRoot]="modelForm">
+    <input [formField]="modelForm.username" type="text"  placeholder="username">
+    @if (modelForm.username().dirty() && modelForm.username().invalid()) {
+        @for (item of modelForm.username().errors(); track $index) {
+            <span class="hint">{{item.message}}</span>
+        }
+
+    }
+    <input [formField]="modelForm.pasword" type="password" placeholder="password">
+    @if (modelForm.pasword().dirty() && modelForm.username().invalid()) {
+        @for (item of modelForm.pasword().errors(); track $index) {
+            <span class="hint">{{item.message}}</span>
+        }
+    }
+    <span>
+        <input type="checkbox" id="keepMe" [formField]='modelForm.keepMe'>
+        <label for="keepMe">Keep me siged in</label>
+    </span>    
+    <button [disabled]="modelForm().invalid()" (click)="check()">login</button>
+    @if (message!='') {
+        <div class="eror">
+            {{message}}
+        </div>
+    }
+</form>
